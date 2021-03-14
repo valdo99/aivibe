@@ -5,14 +5,18 @@ export const Lyrics = () => {
   const [artist, setArtist] = useState("");
   const [song, setSong] = useState("");
   const [text, setText] = useState();
-  const [open,setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
   const searchLyrics = () => {
+    setLoading(true);
     axios
       .get(`https://api.lyrics.ovh/v1/${artist}/${song}`)
       .then((res) => {
+        setLoading(false);
         setText(res.data.lyrics);
       })
       .catch((err) => {
+        setLoading(false);
         alert(err);
       });
   };
@@ -36,25 +40,43 @@ export const Lyrics = () => {
     <>
       <div className="lyrics">
         <input
-          style={{ marginBottom: "5%" }}
+          className="artist"
           value={artist}
           onChange={(e) => setArtist(e.target.value)}
         ></input>
 
-        <input
-          value={song}
-          onChange={(e) => setSong(e.target.value)}
-        ></input>
+        <input value={song} onChange={(e) => setSong(e.target.value)}></input>
       </div>
-        <button className="load" onClick={searchLyrics}>LOAD LYRICS</button>
+      {loading && (
+        <div className="sk-chase">
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot"></div>
+        </div>
+      )}
+      {!loading && (
+        <button className="load" onClick={searchLyrics}>
+          LOAD LYRICS
+        </button>
+      )}
       {text && (
         <>
           {" "}
           <div className="lyricsText">
-              {open ? text : text.slice(0,500)}
-            </div>{" "}
-            <button onClick={() => setOpen(prev=>!prev)}> expand </button>
-            <button onClick={sentiment}>Analyze Lyrics</button>
+            {open ? text : text.slice(0, 500)}
+          </div>{" "}
+          <button className="load" onClick={() => setOpen((prev) => !prev)}>
+            {" "}
+            EXPAND{" "}
+          </button>
+          <span className="button-between"></span>
+          <button className="load" onClick={sentiment}>
+            {" "}
+            ANALIZE LYRICS{" "}
+          </button>
         </>
       )}
     </>

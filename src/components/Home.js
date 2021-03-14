@@ -14,6 +14,7 @@ export const Home = () => {
         <p className="divtext">Start</p>
         <Lyrics></Lyrics>
       </div>
+      <footer></footer>
     </>
   );
 };

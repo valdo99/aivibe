@@ -1,10 +1,12 @@
-import Logo from "../logo.png";
-export const LogoHeader = () => {
+import React from 'react';
+import Logo from '../logo.png';
+
+export default function LogoHeader() {
   return (
     <div className="header">
-      <img src={Logo}></img>
+      <img alt="logo" src={Logo} />
       <span className="AI">AI</span>
       <span className="vibe">Vibe</span>
     </div>
   );
-};
+}

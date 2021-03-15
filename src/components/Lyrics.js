@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
-export const Lyrics = () => {
+export default function Lyrics() {
   const [artist, setArtist] = useState('');
   const [song, setSong] = useState('');
   const [text, setText] = useState();
@@ -47,26 +47,26 @@ export const Lyrics = () => {
           className="artist"
           value={artist}
           onChange={(e) => setArtist(e.target.value)}
-        ></input>
+        />
         <span> Song </span>
 
         <input
           value={song}
           onChange={(e) => setSong(e.target.value)}
-        ></input>
+        />
       </div>
       {loading && (
         <div className="sk-chase">
-          <div className="sk-chase-dot"></div>
-          <div className="sk-chase-dot"></div>
-          <div className="sk-chase-dot"></div>
-          <div className="sk-chase-dot"></div>
-          <div className="sk-chase-dot"></div>
-          <div className="sk-chase-dot"></div>
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
         </div>
       )}
       {!loading && (
-        <button className="load" onClick={searchLyrics}>
+        <button type="button" className="load" onClick={searchLyrics}>
           LOAD LYRICS
         </button>
       )}
@@ -76,17 +76,18 @@ export const Lyrics = () => {
             {open ? text : text.slice(0, 500)}
           </div>
           <button
+            type="button"
             className="load"
             onClick={() => setOpen((prev) => !prev)}
           >
-            EXPAND
+            {open ? 'REDUCE' : 'EXPAND'}
           </button>
-          <span className="button-between"></span>
-          <button className="load" onClick={sentiment}>
+          <span className="button-between" />
+          <button type="button" className="load" onClick={sentiment}>
             ANALIZE LYRICS
           </button>
         </>
       )}
     </>
   );
-};
+}

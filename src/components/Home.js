@@ -1,25 +1,24 @@
-import { LogoHeader } from './LogoHeader';
-import { Info } from './Info';
-import { Lyrics } from './Lyrics';
-import { ThemeMode } from './ThemeMode';
-export const Home = () => {
+import React from 'react';
+import LogoHeader from './LogoHeader';
+import Info from './Info';
+import Lyrics from './Lyrics';
+import ThemeMode from './ThemeMode';
+
+export default function Home() {
   return (
     <>
-      <ThemeMode></ThemeMode>
+      <ThemeMode />
       <div className="home">
-        <LogoHeader
-          textColor="#000000"
-          symbolColor="#1d8cc2"
-        ></LogoHeader>
+        <LogoHeader textColor="#000000" symbolColor="#1d8cc2" />
         <p className="divtext">
           Find out how your favorite song feels
         </p>
 
-        <Info></Info>
+        <Info />
         <p className="divtext">Start</p>
-        <Lyrics></Lyrics>
+        <Lyrics />
       </div>
-      <footer></footer>
+      <footer />
     </>
   );
-};
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export const ThemeMode = () => {
+export default function ThemeMode() {
   const [theme, setTheme] = useState(false);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ export const ThemeMode = () => {
     <>
       <div className="theme">
         <button
+          type="button"
           onClick={() => {
             localStorage.setItem('DARK_MODE', !theme);
             setTheme((prev) => !prev);
@@ -25,4 +26,4 @@ export const ThemeMode = () => {
       </div>
     </>
   );
-};
+}

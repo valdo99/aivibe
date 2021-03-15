@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.21.1",
+    "eslint": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3"
@@ -13,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass" : "sass src/Sass:src/Css --watch --no-source-map "
+    "sass": "sass src/Sass:src/Css --watch --no-source-map "
   },
   "eslintConfig": {
     "extends": [
@@ -34,6 +37,11 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "sass": "^1.32.8"
   }
 }

@@ -1,27 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 export const ThemeMode = () => {
   const [theme, setTheme] = useState(false);
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem("DARK_MODE"))) {
+    if (JSON.parse(localStorage.getItem('DARK_MODE'))) {
       setTheme(true);
       document.body.classList.add('darkMode');
-    }else{
-        document.body.classList.remove('darkMode');
-
+    } else {
+      document.body.classList.remove('darkMode');
     }
-  },[theme]);
+  }, [theme]);
   return (
     <>
       <div className="theme">
         <button
           onClick={() => {
-            localStorage.setItem("DARK_MODE", !theme);
+            localStorage.setItem('DARK_MODE', !theme);
             setTheme((prev) => !prev);
           }}
         >
-          {theme ? "🌚" : "🌞"}
+          {theme ? '🌚' : '🌞'}
         </button>
       </div>
     </>

@@ -1,0 +1,44 @@
+@import './_variables.scss';
+
+.header {
+  margin-top: 1.5%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .AI {
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: x-large;
+    color: $orange;
+  }
+  .vibe {
+    font-size: x-large;
+  }
+  img {
+    width: 40%;
+  }
+  button {
+    align-items: right;
+  }
+}
+
+.theme {
+  display: inline-flex;
+  justify-content: right;
+  right: 5%;
+  top: 10%;
+  position: fixed;
+  width: 100%;
+  float: right;
+  button {
+    font-size: 1.5em;
+    border-radius: 25px;
+    border: none;
+    &:hover {
+      background-color: $light;
+      cursor: pointer;
+    }
+  }
+}

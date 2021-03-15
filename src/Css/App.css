@@ -45,6 +45,30 @@
   max-width: 80%;
 }
 
+.darkMode {
+  background-color: #001021;
+  color: #ffffff;
+}
+.darkMode .theme button:hover {
+  background-color: #001021;
+  cursor: pointer;
+}
+
+.load {
+  width: 10em;
+  height: 120%;
+  font-size: 1.2em;
+  background-color: #fe4a49;
+  border: none;
+  color: white;
+  margin-top: 2%;
+  border-radius: 25px;
+  font-weight: 500;
+}
+.load:hover {
+  cursor: pointer;
+}
+
 .header {
   margin-top: 1.5%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
@@ -85,34 +109,6 @@
 .theme button:hover {
   background-color: #ffffff;
   cursor: pointer;
-}
-
-.darkMode {
-  background-color: #001021;
-  color: #ffffff;
-}
-.darkMode .theme button:hover {
-  background-color: #001021;
-  cursor: pointer;
-}
-
-.load {
-  width: 10em;
-  height: 120%;
-  font-size: 1.2em;
-  background-color: #fe4a49;
-  border: none;
-  color: white;
-  margin-top: 2%;
-  border-radius: 25px;
-  font-weight: 500;
-}
-.load:hover {
-  cursor: pointer;
-}
-
-footer {
-  height: 100px;
 }
 
 .sk-chase {
@@ -206,4 +202,7 @@ footer {
   100%, 0% {
     transform: scale(1);
   }
+}
+footer {
+  height: 100px;
 }

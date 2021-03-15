@@ -1,0 +1,75 @@
+@import './_variables.scss';
+
+.home {
+  display: grid;
+  place-items: center;
+}
+
+.lyrics {
+  max-width: 25vw;
+  display: grid;
+  margin-bottom: 1%;
+  justify-content: center;
+  span {
+    text-align: center;
+  }
+  input {
+    border-style: solid;
+    outline: none;
+    border-color: $orange;
+    margin-bottom: 10%;
+    height: 1.4em;
+    border-radius: 25px;
+    font-size: small;
+    border-width: initial;
+  }
+}
+
+.lyricsText {
+  max-width: 60vw;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.button-between {
+  margin-top: 2em;
+}
+
+.info {
+  max-width: 60vw;
+}
+
+.divtext {
+  font-family: $fontTitle;
+  font-size: 2em;
+  text-align: center;
+  max-width: 80%;
+}
+
+.darkMode {
+  background-color: $dark;
+  color: $light;
+  .theme {
+    button {
+      &:hover {
+        background-color: $dark;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.load {
+  width: 10em;
+  height: 120%;
+  font-size: 1.2em;
+  background-color: $orange;
+  border: none;
+  color: white;
+  margin-top: 2%;
+  border-radius: 25px;
+  font-weight: 500;
+  &:hover {
+    cursor: pointer;
+  }
+}

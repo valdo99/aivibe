@@ -39,11 +39,13 @@ export const Lyrics = () => {
   return (
     <>
       <div className="lyrics">
+      <span> Author </span>
         <input
           className="artist"
           value={artist}
           onChange={(e) => setArtist(e.target.value)}
         ></input>
+            <span> Song </span>
 
         <input value={song} onChange={(e) => setSong(e.target.value)}></input>
       </div>

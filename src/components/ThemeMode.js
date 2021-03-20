@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Sun from '../assests/Sun';
+import Moon from '../assests/Moon';
 
 export default function ThemeMode() {
   const [theme, setTheme] = useState(false);
@@ -21,7 +23,7 @@ export default function ThemeMode() {
             setTheme((prev) => !prev);
           }}
         >
-          {theme ? '🌚' : '🌞'}
+          <div className="icons">{theme ? <Moon /> : <Sun />}</div>
         </button>
       </div>
     </>

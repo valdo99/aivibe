@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import SentimentModal from './SentimentModal';
+import Loading from './Loading';
 
 export default function Lyrics() {
   const [artist, setArtist] = useState('');
@@ -7,6 +9,8 @@ export default function Lyrics() {
   const [text, setText] = useState();
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [modal, setModal] = useState(false);
+  const [modalContent, setModalContent] = useState('');
   const searchLyrics = () => {
     setLoading(true);
     axios
@@ -17,7 +21,7 @@ export default function Lyrics() {
       })
       .catch((err) => {
         setLoading(false);
-        alert(err);
+        console.log(err);
       });
   };
 
@@ -32,11 +36,16 @@ export default function Lyrics() {
         },
       )
       .then((res) => {
-        alert(res.data.result.type);
+        setModalContent(res.data.result.type);
+        setModal(true);
       })
       .catch((err) => {
-        alert(err);
+        console.log(err);
       });
+  };
+
+  const closeModal = () => {
+    setModal(false);
   };
 
   return (
@@ -55,16 +64,7 @@ export default function Lyrics() {
           onChange={(e) => setSong(e.target.value)}
         />
       </div>
-      {loading && (
-        <div className="sk-chase">
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-        </div>
-      )}
+      {loading && <Loading />}
       {!loading && (
         <button type="button" className="load" onClick={searchLyrics}>
           LOAD LYRICS
@@ -86,6 +86,12 @@ export default function Lyrics() {
           <button type="button" className="load" onClick={sentiment}>
             ANALIZE LYRICS
           </button>
+          {modal && (
+            <SentimentModal
+              closeModal={closeModal}
+              content={modalContent}
+            />
+          )}
         </>
       )}
     </>

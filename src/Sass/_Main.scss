@@ -45,14 +45,24 @@
   text-align: center;
   max-width: 80%;
 }
-
+.theme {
+  button {
+    background-color: transparent;
+    &:hover {
+      transition-property: transform;
+      transition: linear;
+      transition-duration: 0.2s;
+      transform: translateY(-5px);
+    }
+  }
+}
 .darkMode {
   background-color: $dark;
   color: $light;
   .theme {
     button {
       &:hover {
-        background-color: $dark;
+        background-color: transparent;
         cursor: pointer;
       }
     }
@@ -71,5 +81,16 @@
   font-weight: 500;
   &:hover {
     cursor: pointer;
+  }
+}
+
+.icons {
+  height: 50px;
+  width: 50px;
+  .moon {
+    color: darkgray;
+  }
+  .sun {
+    color: gold;
   }
 }

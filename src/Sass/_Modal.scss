@@ -1,0 +1,29 @@
+@import './_variables.scss';
+
+.modal {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  border-radius: 25px;
+  background-color: #fff;
+  display: content;
+
+  .close-button {
+    display: content;
+    button {
+      float: right;
+    }
+  }
+  p {
+    color: #000;
+    text-align: center;
+  }
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}

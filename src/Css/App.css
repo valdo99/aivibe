@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Staatliches");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches");
 .home {
   display: grid;
   place-items: center;
@@ -45,12 +48,22 @@
   max-width: 80%;
 }
 
+.theme button {
+  background-color: transparent;
+}
+.theme button:hover {
+  transition-property: transform;
+  transition: linear;
+  transition-duration: 0.2s;
+  transform: translateY(-5px);
+}
+
 .darkMode {
   background-color: #001021;
   color: #ffffff;
 }
 .darkMode .theme button:hover {
-  background-color: #001021;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -67,6 +80,17 @@
 }
 .load:hover {
   cursor: pointer;
+}
+
+.icons {
+  height: 50px;
+  width: 50px;
+}
+.icons .moon {
+  color: darkgray;
+}
+.icons .sun {
+  color: gold;
 }
 
 .header {
@@ -205,4 +229,31 @@
 }
 footer {
   height: 100px;
+}
+
+.modal {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  border-radius: 25px;
+  background-color: #fff;
+  display: content;
+}
+.modal .close-button {
+  display: content;
+}
+.modal .close-button button {
+  float: right;
+}
+.modal p {
+  color: #000;
+  text-align: center;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }
